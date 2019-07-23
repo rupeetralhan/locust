@@ -263,9 +263,9 @@ class StatsEntry(object):
         elif response_time < 1000:
             rounded_response_time = int(round(response_time, -1))
         elif response_time < 10000:
-            rounded_response_time = int(round(response_time, -2))
+            rounded_response_time = int(round(response_time, -1))
         else:
-            rounded_response_time = int(round(response_time, -3))
+            rounded_response_time = int(round(response_time, -1))
 
         # increase request count for the rounded key in response time dict
         self.response_times.setdefault(rounded_response_time, 0)
